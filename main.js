@@ -1,4 +1,19 @@
 
+class Usuarios {
+  constructor (info) {
+  this.nombre = info.nombre;
+  this.edad = info.edad;
+  this.direccion = info.direccion;
+  this.telefono = info.telefono;}
+}
+const usuario1 = new Usuarios({
+  nombre: "Marcos",
+  edad: 24, 
+  direccion: "Av alameda", 
+  telefono: 56925247879,
+});
+
+console.log(usuario1);
 function saludar() {
     let nombre = prompt("Como te llamas?");
     alert(`${nombre} Es un gusto poder ayudarte`);
@@ -19,40 +34,3 @@ if (edad <= 16){
 } else{
     alert ("Puedes tomar suplementos sin ningun problema");
 }
-
-
-
-let entrada = prompt("Que suplementos estas buscanco? ").toLowerCase();
-
-while (entrada != "SLP") {
-    switch (entrada){
-    case "proteina":
-        alert("Disponible");
-        break;
-    case "creatina":
-        alert("Disponible");
-        break;
-    case "pre entreno":
-            alert("Disponible");
-            break; 
-    default:
-        alert("No trabajamos con ese tipo de productos");
-        break;
-    }
-    entrada = prompt("Que suplementos estas buscanco?");
-}
-
-// proteina en descuento 
-const suma = (p, t) => p + t;
-const resta = (p, t) => p - t;
-const iva = (valoProducto) => valorProducto * 0.19;
-
-let valorProducto = 80000;
-let descuento = 30000;
-
-let precioFinal =  resta(suma(precioProducto, iva(precioProducto)), descuento);
-
-
-
-
-

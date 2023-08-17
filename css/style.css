@@ -1,0 +1,18 @@
+body{
+    background-color: #191919;
+}
+.container-fluid{
+    background-color: #8a0202;
+    color:aqua
+}
+h1{
+    color: #eeee;
+    background-color: #e3431acc;
+    font-size: 30px;
+    text-align: center;
+    padding: 3px;
+}
+h2{
+    color:#eeee;
+
+}
