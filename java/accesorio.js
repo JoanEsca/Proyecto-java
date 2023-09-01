@@ -5,6 +5,7 @@ const accesorios = [
     { id: 3, nombre: "rodillera", precio: 20000 },
     { id: 4, nombre: "muñequera", precio: 17000 },
 ];
+localStorage.setItem("accesorios", JSON.stringify(accesorios));
 
 let nombre = prompt("Si quieres ver todos nuestros accesorios escribe un si").toLowerCase();
 const todosAccesorios = accesorios.map((item) => item.nombre);

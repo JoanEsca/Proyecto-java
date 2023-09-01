@@ -1,24 +1,58 @@
 
-class Usuarios {
-  constructor (info) {
-  this.nombre = info.nombre;
-  this.edad = info.edad;
-  this.direccion = info.direccion;
-  this.telefono = info.telefono;}
-}
-const usuario1 = new Usuarios({
-  nombre: "Marcos",
-  edad: 24, 
-  direccion: "Av alameda", 
-  telefono: 56925247879,
+const idBoton = document.getElementById("id-boton");
+const idRegistro = document.getElementById("id-registro");
+const userLogin = document.getElementById("userlogin");
+
+let eliminar = document.getElementById("eliminar")
+
+let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+
+    class usuariosNuevos{
+        constructor(user, pass){
+            this.id = usuarios.length + 1;
+            this.user = user;
+            this.pass = pass;
+            this.admin = false;
+    }};
+
+
+
+idBoton.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    const user = idRegistro.children[0].children[1].value
+    const pass = idRegistro.children[1].children[1].value
+
+    const nuevoUsuario = new usuariosNuevos(user, pass);
+
+    Registrar(nuevoUsuario);
 });
 
-console.log(usuario1);
-function saludar() {
-    let nombre = prompt("Como te llamas?");
-    alert(`${nombre} Es un gusto poder ayudarte`);
-}
-saludar();
+
+const Registrar = (nuevoUsuario) => {
+
+    const userNuevo = usuarios.find((usuario) => usuario?.user === nuevoUsuario.user);
+    if(userNuevo === undefined){
+
+        usuarios.push(nuevoUsuario);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        sessionStorage.setItem("usuario", JSON.stringify(nuevoUsuario));
+        alert("Bienvenido ya puedes realizar tus compras");
+        
+    }else{
+        alert(`Ya estas registrado`);
+
+
+        sessionStorage.setItem("usuario", JSON.stringify(usuario));
+    }};
+        eliminar.addEventListener("dblclick", () => {
+            sessionStorage.clear();
+            location.reload();
+            alert("Sesión cerrada");
+        });
+
+
+
 
 
 let suplemento = prompt("Quieres tomar suplementos?").toLowerCase();
@@ -33,4 +67,4 @@ if (edad <= 16){
     alert ("Tienes que ser mayor de 16");
 } else{
     alert ("Puedes tomar suplementos sin ningun problema");
-}
+ }
