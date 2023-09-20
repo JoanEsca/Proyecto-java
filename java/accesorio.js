@@ -1,10 +1,4 @@
 
-const accesorios = [
-    { id: 1, nombre: "guante", precio: 35000 },
-    { id: 2, nombre: "cinturon", precio: 50000 },
-    { id: 3, nombre: "rodillera", precio: 20000 },
-    { id: 4, nombre: "muñequera", precio: 17000 },
-];
 localStorage.setItem("accesorios", JSON.stringify(accesorios));
 
 let nombre = prompt("Si quieres ver todos nuestros accesorios escribe un si").toLowerCase();
@@ -32,7 +26,7 @@ const producto = accesorios.find((item) => item.nombre === accesorioParaEntrenar
         alert("Accesorio no encontrado");
     }
 accesorioParaEntrenar = prompt("Que accesorio estas buscado? de lon contrario deja el espacio en blanco");
-}w
+}
 
 
 const descuentos = accesorios.map((item) => {

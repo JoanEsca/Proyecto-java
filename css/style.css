@@ -7,12 +7,12 @@ body{
 }
 h1{
     color: #eeee;
-    background-color: #e3431acc;
+    background-color: #e31a1acc;
     font-size: 30px;
     text-align: center;
     padding: 3px;
 }
-h2 , h3 , h4, h5, h6{
+h2 , h3 , h4, h6{
     color:#eeee;
 }
 p, b, form{
@@ -44,43 +44,49 @@ color: transparent;
     margin: 10px;
 
 }
+.usuarios{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
 
 /* suplementos */
 .stock{
     padding-left: 150px;
 }
-.carta{
-    border: solid #eeee 2px;
-    width: 500px;
+.cards{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 15px;
-    
-    .imagen{
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-    }
-    .body-carta{
-        width: 600px;
+    gap: 30px;
+    padding: 20px;
+}    
+    .body-cards{
         text-align: center;
         padding: 10px;
+        box-shadow: 5px 3px 15px 4px #eeee;
         
-
     }
-}
-
-color: transparent;
-    background-image: linear-gradient(45deg,  $text-color, $nav-color );
-    font-size: 80px;
-    padding-top: 3%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    transition: 1s;
-    &:hover {
-        background-image: linear-gradient(45deg,#ff0000, $text-color );
+    .imagen{
+        width: 450px;
+        height: 450px;
+        object-fit: cover;
     }
+
+    /* CARRITO */
+.carts{
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    overflow: auto;
+    top: 12vh;
+    z-index: 9;
+    right: 1%;
+    bottom: 30vh;
+
 }
