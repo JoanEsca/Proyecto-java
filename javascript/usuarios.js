@@ -54,5 +54,5 @@ const Registrar = (nuevoUsuario) => {
         Swal.fire('Ya estas registrado'),
         location.href = "../index.html"
 
-        sessionStorage.setItem("usuario", JSON.stringify(usuario));
+        sessionStorage.setItem("usuario", JSON.stringify(usuarios));
     }};

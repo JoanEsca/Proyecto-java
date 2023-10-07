@@ -87,6 +87,23 @@ color: transparent;
     top: 12vh;
     z-index: 9;
     right: 1%;
-    bottom: 30vh;
-
+    bottom: 30%;
+}
+.cartbody{
+    color : black;
+    display: flex;
+}
+.cart-img{
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.cerrarcarrito{
+    cursor: pointer;
+    border:  solid #e52828 1px;
+}
+.cartfooter{
+    display: flex;
+    padding: 5px;
 }
